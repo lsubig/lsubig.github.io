@@ -143,6 +143,50 @@ h2 {
   font-weight: bold;
 }
 
+
+.footer-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.mob-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 제보 버튼 */
+.report-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: linear-gradient(45deg, #dbfbff, #75a8fa);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.report-btn:hover {
+  background: linear-gradient(45deg, #e0fdd9, #56ffb9);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
 </style>
 </head>
 <body>
@@ -152,6 +196,16 @@ h2 {
 <input type="text" id="searchBox" placeholder="초성을 입력하세요 [예: ㄱ, ㅄ(ㅎㅎ ㅈㅅ),ㅍㅇㅇㄽ 가능]" />
 
 <div id="result"></div>
+
+<div class="footer-widget">
+  <!-- 몹 이미지 -->
+  <img src="https://maplestory.io/api/GMS/200/mob/3110101/render/stand" alt="메이플 몹" class="img">
+
+  <!-- 제보 버튼 -->
+  <a href="discord://discord.com/users/549901151819268127" class="report-btn">
+    누락/중복 키워드 제보
+  </a>
+</div>
 
 <footer class="footer">
   메이플랜드 | 제작 : 성대 | © Salt Guild. All rights reserved | 누락단어 제보 : lsubig(디스코드)
@@ -677,7 +731,7 @@ h2 {
 ㅈㄴㄱㅂ 장난감북
 ㅈㄴㅇㅂㄱㅇㅃ 주니어부기의뿔
 ㅈㄴㄱㅂㅈㅇㅋ 장난감병정의칼
-ㅈㄴㄱㅅㄲㅇㄹ 장난감새'끼오리 (필터링 때문에 ' 가 추가되어 있음)
+ㅈㄴㄱㅅㄲㅇㄹ 장난감새끼오리
 ㅈㄴㄱㅍㄹㅍㄹ 장난감프로펠러
 ㅈㄴㅇㅅㅌㅂㅇㄷㅈㄱ 주니어스톤볼의돌조각
 ㅈㄴㅇㅇㅌㅇㄱㅈ 주니어예티의가죽
@@ -775,7 +829,7 @@ h2 {
 ㅊㄱㄱㄹㅈㅁㅅ 창공격력주문서
 ㅋㄴㅅㅌㄱㅎㅈㅁㅅ 커닝시티귀환주문서
 ㅌㄱㅊㄹㅈㅁㅅ 투구체력주문서
-ㅍㄱㄱㅎㅈㅁㅅ 폐광귀환주문서 (정식명칭은 귀환인데 귀한이 정답으로 인정되는 버그가 있었음)
+ㅍㄱㄱㅎㅈㅁㅅ 폐광귀환주문서
 ㅍㅇㄱㄱㄹㅈㅁㅅ 폴암공격력주문서
 ㅍㅈㅂㅈㅍㄹㅈㅁㅅ 펫장비점프력주문서
 ㅎㄱㄱㄹㅈㅁㅅ 활공격력주문서
@@ -1058,7 +1112,7 @@ h2 {
 ㅁㅅ 묘선
 ㅁㅅㄱㄷ 메소가드
 ㅁㅅㄱㄹ 믹스골렘
-ㅁㅅㄹㅇㅈ 메소레인져
+ㅁㅅㄹㅇㅈ 메소레인저
 ㅁㅅㄹㅇㅈㄱㄹ 메소레인저그린
 ㅁㅅㄹㅇㅈㅂㄹ 메소레인저블랙
 ㅁㅅㄹㅇㅈㅇㄹㅇ 메소레인저옐로우
@@ -1160,7 +1214,8 @@ h2 {
 ㅂㅇㄷㅁㅂ 붉은도마뱀
 ㅂㅇㅁㅅㅌ 보우마스터
 ㅂㅇㅊㅉ 붉은채찍
-ㅂㅇㅋ 바이킨 바이킹
+ㅂㅇㅋ 바이킨
+ㅂㅇㅋ 바이킹
 ㅂㅈㄹ 빗자루
 ㅂㅊㄴㅌㄲ 북치는토끼
 ㅂㅋ 버크
@@ -1358,7 +1413,6 @@ h2 {
 ㅇㅈㅂㄱㄱㅅㅍ 유적발굴단게시판
 ㅇㅈㅂㄱㄷㄱㅅㅍ 유적발굴단게시판
 ㅇㅈㅇㄲ 요정의꿀
-ㅇㅈㅇㅋ 요정웡키
 ㅇㅈㅋㄹㅇ 요정크리엘
 ㅇㅊ 아처
 ㅇㅋㄴㅇ 아케니아
@@ -1568,7 +1622,9 @@ h2 {
 ㅍㅋㅅ 포커스
 ㅍㅋㅅㅇㅂ 핑크세이버
 ㅍㅋㅌㄴ 핑크테니
-ㅍㅌ 파티 포터 피터
+ㅍㅌ 파티
+ㅍㅌ 포터
+ㅍㅌ 피터
 ㅍㅌㅇㅊ 팬텀워치
 ㅍㅍ 퍼펫
 ㅍㅍ 푸퍼
@@ -1577,6 +1633,17 @@ h2 {
 ㅍㅍㅇㅇ 푸퍼의알
 ㅍㅍㅋ 픽파킷
 ㅍㅎㅂ 핀호브
+추가제보+
+ㄱㄱㅇ 가고일(샤레니안)
+ㄴㅈㅇㅂㅅ 닌자앰부쉬(도적4차스킬)
+ㅎㅋ 헹키
+ㅍㄹㄹㅇㅈ 페럴라이즈
+ㅌㅂ 택배
+ㅎㄴㅂㅋㄴ 하늘발코니
+ㅎㄴㅌㄹㅅ 하늘테라스
+
+
+
 </pre>
 
 <script>
