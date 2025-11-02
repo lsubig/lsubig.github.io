@@ -191,7 +191,7 @@ h2 {
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
-/* 좌측 하단 업데이트 버튼 */
+/* 좌측 하단 버튼 */
 .update-container {
   position: fixed;
   bottom: 20px;
@@ -219,13 +219,13 @@ h2 {
   line-height: 1.6;
 }
 
-/* 업데이트 버튼 hover 시 중앙 팝업 표시 */
+/* 업데이트 마우스오버 */
 .update-container:hover ~ .update-popup {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* 팝업 내용 스타일 */
+/* 팝업 */
 .update-popup p {
   margin: 5px 0;
   font-weight: bold;
@@ -251,17 +251,19 @@ h2 {
   </a>
 </div>
 
-<!-- 좌측하단 업데이트 버튼 -->
+<!-- 좌측하단 버튼 -->
 <div class="update-container">
   <a href="#" class="report-btn">업데이트 내용</a>
 </div>
 
-<!-- 마우스오버 시 중앙에 표시될 텍스트 -->
+<!-- 업뎃마우스오버 중앙텍스트란 -->
 <div class="update-popup">
   <p>제작 : 성대 (메이플랜드)</p>
   <p>2025.11.01 제작 (단어 약 750개 가량)
   <p>2025.11.01 약 11개 단어 추가
-  <p>2025.11.02 19:16 약 1500개 단어 추가</p>
+  <p>2025.11.02 19:16 약 1500개 단어 추가
+    <p>└한/영 매핑테이블 추가 (r 검색시 ㄱ{금}으로 인식)</p>
+  </p>
 </div>
 
 <footer class="footer">
@@ -2620,7 +2622,7 @@ searchBox.addEventListener("input", () => {
   let normalized = "";
   for (const ch of key) {
     if (altMap[ch]) {
-      // ㅄ 등 분리해서 풀기
+      // 매핑 + 쌍자음대응
       normalized += altMap[ch];
     } else {
       normalized += ch;
